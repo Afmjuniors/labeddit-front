@@ -1,26 +1,31 @@
 import React from 'react'
+import "../styles.css"
 import logoFull from "../assets/images/logo-full.svg"
 import Layout from '../components/Layout'
+import TextField from '@mui/material/TextField'
 
 const HomePage = () => {
   return (
     <Layout>
       <div className='wrapper-greetings'>
-        <img src={logoFull} alt="LabEddit Logo" />
+        <img className="logo-full" src={logoFull} alt="LabEddit Logo" />
+        <div className='subtitles'>
+          <p>O projeto de rede social da Labenu</p>
+          <p>Feito por Alexandre Machado</p>
+        </div>
       </div>
       <div className="form-wrapper">
-          <form>
-            <input className='input-form' type='text'  placeholder='E-mail' required />
-            <input className='input-form' type="password" placeholder='Senha'required/>
-            <button className='btn'> Continuar</button>
-          </form>
+        <form>
+          <TextField type="text" id='input-form' label="E-mail" variant="outlined" required />
+          <TextField type="password" id='input-form' label="Senha" variant="outlined" required />
+          <button className='btn'> Continuar</button>
+        </form>
+        <hr></hr>
       </div>
-    <div>
-      <div>
-        <button className='btn btn-white'>Crie uma conta!</button>
-      </div>
+        <div className='signup-btn'>
+          <button className='btn btn-white'>Crie uma conta!</button>
+        </div>
 
-    </div>
 
     </Layout>
 

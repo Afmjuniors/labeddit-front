@@ -4,8 +4,11 @@ import Header from './Header'
 const Layout = (props) => {
   return (
 <div className='container'>
+
     <Header />
+
     {props.children}
+
 </div>
   )
 }

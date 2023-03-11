@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" width="21" height="20">
+	<title>arrow-red</title>
+	<defs>
+		<image width="15" height="17" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAARCAMAAAA11AaTAAAAAXNSR0IB2cksfwAAAF1QTFRFAAAAb29vb29vb29vb29vb29vb29v/wAAb29vb29vb29vb29vb29v+wMDb29vb29v4hcXb29v1SAg7A4Ob29vb29vb29v9AkJ9AgI5RQU9AgI8AwMziYmoElJb29vxCbOOgAAAB90Uk5TACAQz7+wb/9gcJ+AQLBQ4Wkwh6Sgf6+ipaTQwX1VwKj4zwgAAAB2SURBVHicXc/bEoMgDEXRaGgPItZSifb+/5+pXDI67rf1wJlAVGroWMuG24MvV1izs3MAXK/0PGwG3+rUeE/EMIay9UBpyptRoNmZKBjszZ4aFlkyniK8LQRfX7yiz4PUF7/1gOrPyd+Tf2rrsqXTD8R/KqbrVtQLBrjH6r0EAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<use id="img1" href="#img1" transform="matrix(-1,0,0,-1,18,20)"/>
+</svg>

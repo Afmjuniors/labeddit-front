@@ -141,7 +141,7 @@ body {
     display: flex;
     gap: 8px;
 }
-.wrapper-reel{
+.wrapper-feed{
     width: 85vw;
     max-width: 1200px;
     display: flex;
@@ -178,6 +178,7 @@ body {
 }
 .posts-wrapper{
 display: flex;
+width: 100%;
 flex-direction: column;
 background-color: #FBFBFB;
 border:1px solid #F2F2F2;

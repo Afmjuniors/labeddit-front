@@ -2,9 +2,11 @@ import closeIcon from "../assets/images/exit-icon.svg"
 import logoIcon from "../assets/images/logo-icon.svg"
 import React, { useState } from 'react'
 import "../styles.css"
-import { useLocation, useParams } from "react-router-dom"
+import { useLocation, useNavigate, useParams } from "react-router-dom"
+import { goToHomePage } from "../routes/coordinator"
 
 const Header = () => {
+  const navigate = useNavigate()
   const  [isLogged, setIsLogged] = useState(false)
   const location = useLocation()
   const params = useParams()
@@ -20,7 +22,7 @@ const Header = () => {
         <img className="logo-icon icon" src={logoIcon} alt="Logo Icon"/>
         { isLogged?
           <p>Logout</p>:        
-          <p>Entrar</p>      
+          <p onClick={()=>goToHomePage(navigate)}>Entrar</p>      
 
         }
     </header>

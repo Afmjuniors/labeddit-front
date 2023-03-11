@@ -1,9 +1,9 @@
 import React from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import HomePage from '../pages/HomePage'
-import Login from '../pages/Login'
+import SignUp from '../pages/SignUp'
 import PageNotFound from '../pages/PageNotFound'
-import Reel from '../pages/Reel'
+import Feed from '../pages/Feed'
 
 
 const Router = () => {
@@ -13,9 +13,9 @@ const Router = () => {
     <Routes>
         <Route path="*" element={<PageNotFound />}/>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/login" element={<Login />}/>
-        <Route path="/reel" element={<Reel />}/>
-        <Route path="/reel/:id" element={<Reel />}/>
+        <Route path="/signup" element={<SignUp />}/>
+        <Route path="/feed" element={<Feed />}/>
+        <Route path="/feed/:id" element={<Feed />}/>
     </Routes>
 
    </BrowserRouter>

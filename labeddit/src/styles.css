@@ -42,8 +42,9 @@ body {
 }
 
 .exit-icon {
-    height: 50%;
+    height: 40%;
 }
+
 
 .wrapper-greetings {
     display: flex;
@@ -70,8 +71,7 @@ body {
     width: 80%;
     margin: 0 auto;
     border-bottom: 1px;
-    background: linear-gradient(to right, #FF6489, #F9B24E);
-    ;
+
 }
 
 .form-wrapper form {
@@ -88,19 +88,25 @@ body {
 
 #input-form {
     width: 79vw;
+    max-width: 1200px;
     
 }
-
-.form-wrapper hr {
-    border-image-source: linear-gradient(to left, #FF6489, #F9B24E);
+.line{
+    height: 1px;
+    background: linear-gradient(to right, #FF6489, #F9B24E);
+    width: 100%;
+    margin: 12px 0;
 
 }
+
+
 
 .btn {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 79vw;
+    max-width: 500px;
     height: 50px;
     color: #fff;
     border: none;
@@ -134,4 +140,84 @@ body {
 .checkbox-group{
     display: flex;
     gap: 8px;
+}
+.wrapper-reel{
+    width: 85vw;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.new-post{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 16px auto;
+    align-items: center;
+    
+}
+.new-post textarea{
+    width: 100%;
+    background-color: #EDEDED;
+    border: none;
+    padding: 0.8rem;
+    font-family: var(--font-alt);
+    font-weight: 400;
+    font-size: 1rem;
+    color: #000;
+    border-radius: 12px;
+}
+.new-post textarea::placeholder{
+    color: #6F6F6F;
+
+}
+.btn-new-post{
+    margin: 2vh 0;
+}
+.posts-wrapper{
+display: flex;
+flex-direction: column;
+background-color: #FBFBFB;
+border:1px solid #F2F2F2;
+border-radius: 12px;
+padding: 8px;
+margin: 5px 0;
+
+
+}
+.sender{
+color:#6F6F6F;
+font-size: 0.7rem;
+font-weight: 400;
+font-family: var(--font-alt);
+}
+.content{
+    padding: 1rem 0;
+    font-family: var(--font-alt);
+    font-weight: 400;
+    color: #000;
+    font-size: 1rem;
+}
+.reactions-wrapper{
+    height: 1rem;
+    display: flex;
+}
+.reactions{
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.reactions img{
+    height: 1rem;
+}
+.number-reaction{
+    margin: 0 8px;
+    font-family: var(--font-alt);
+    font-size: 0.625rem;
+    font-weight: 700;
+    color:#6F6F6F;
+
 }

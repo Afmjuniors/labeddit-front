@@ -2,9 +2,9 @@ import React from 'react'
 import logoFull from "../assets/images/logo-full.svg"
 import Layout from '../components/Layout'
 import TextField from '@mui/material/TextField'
-import "../styles.css"
 
-const HomePage = () => {
+const SignUp = () => {
+    
     return (
         <Layout>
             <div className='wrapper-greetings'>
@@ -30,4 +30,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default SignUp

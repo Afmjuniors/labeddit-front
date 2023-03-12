@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import logoFull from "../assets/images/logo-full.svg"
 import Layout from '../components/Layout'
 import TextField from '@mui/material/TextField'
@@ -8,9 +8,13 @@ import axios from 'axios'
 import { useNavigate } from 'react-router'
 import { CircularProgress } from '@mui/material'
 import { goToFeed } from '../routes/coordinator'
+import { GlobalContext } from '../context/GlobalContext'
 
 const SignUp = () => {
     const navigate = useNavigate()
+
+    const {setIsLogged} = useContext(GlobalContext)
+
     const [nickname, setNickname] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -35,7 +39,7 @@ const SignUp = () => {
     const handleOnSubmit = (e) => {
         e.preventDefault();
         const newUser = {
-            nickname,
+            name:nickname,
             email,
             password,
         }
@@ -49,6 +53,7 @@ const SignUp = () => {
             setIsLoading(true)
             const response = await axios.post(`${BASE_URL}/users/signup`, newUser)
             localStorage.setItem('token', response.data.token)
+            setIsLogged(true)
             setIsLoading(false)
             goToFeed(navigate)
         } catch (error) {

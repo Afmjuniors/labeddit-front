@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import logoFull from "../assets/images/logo-full.svg"
 import Layout from '../components/Layout'
 import TextField from '@mui/material/TextField'
@@ -8,10 +8,13 @@ import { regexEmail, regexPassword } from '../constants/regex'
 import {  useNavigate } from 'react-router-dom'
 import { goToFeed, goToSignUp } from '../routes/coordinator'
 import { CircularProgress } from '@mui/material'
+import { GlobalContext } from '../context/GlobalContext'
 
 
 const HomePage = () => {
   const navigate = useNavigate()
+  const {isLogged, setIsLogged} = useContext(GlobalContext)
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -40,6 +43,8 @@ const HomePage = () => {
     if (isValid) {
       sendRequestLogin(userLogin)
     }
+    setEmail('')
+    setPassword('')
   }
 
 
@@ -48,12 +53,18 @@ const HomePage = () => {
       setIsLoading(true)
       const response = await axios.post(`${BASE_URL}/users/login`, userLogin)
       localStorage.setItem('token', response.data.token)
+      setIsLogged(true)
       setIsLoading(false)
       goToFeed(navigate)
 
     } catch (error) {
       setIsLoading(false)
       console.log(error)
+
+      if(error.response.status===404){
+        window.alert("Email ou senha invalida")
+
+      }
     }
   }
 

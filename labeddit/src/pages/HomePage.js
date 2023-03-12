@@ -1,58 +1,70 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import logoFull from "../assets/images/logo-full.svg"
 import Layout from '../components/Layout'
 import TextField from '@mui/material/TextField'
 import { BASE_URL } from '../constants/baseUrl'
 import axios from 'axios'
 import { regexEmail, regexPassword } from '../constants/regex'
-import { useLocation } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
+import { goToFeed, goToSignUp } from '../routes/coordinator'
+import { CircularProgress } from '@mui/material'
+import { GlobalContext } from '../context/GlobalContext'
 
 
 const HomePage = () => {
-  const [email, setEmail]=useState('')
-  const [password,setPassword] = useState('')
-  const [isLoading,setIsLoading] = useState(false)
-  const [isValid, setIsValid] = useState(false)
-  const location = useLocation()
+  const navigate = useNavigate()
+  const {isLogged, setIsLogged} = useContext(GlobalContext)
 
-  const validation = () =>{
-    if(!email.match(regexEmail)){
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [isValid, setIsValid] = useState(false)
+
+  const validation = () => {
+    if (!email.match(regexEmail)) {
       window.alert('Deve ser um email valido')
       setIsValid(false)
     }
-    if(!password.match(regexPassword)){
-      window.alert('Deve ser um email valido')
+    if (!password.match(regexPassword)) {
+      window.alert('Deve ser um password valido: conter pelo menos 1 letra Maiuscula, 1 letra minuscula, 1 caracter especial, 1 numero e ter de 8 a 12 caracteres')
       setIsValid(false)
     }
-    if(password.match(regexPassword) && email.match(regexEmail)){
+    if (password.match(regexPassword) && email.match(regexEmail)) {
       setIsValid(true)
     }
   }
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    validation()
     const userLogin = {
       email,
       password
     }
-    if(isValid){
+    if (isValid) {
       sendRequestLogin(userLogin)
     }
+    setEmail('')
+    setPassword('')
   }
-  
 
-  const sendRequestLogin =async (userLogin)=>{
+
+  const sendRequestLogin = async (userLogin) => {
     try {
       setIsLoading(true)
-     const response = await axios.post(`${BASE_URL}/users/login`,userLogin)
-     localStorage.setItem('token',response.data.token)
-     console.log(response)
-     setIsLoading(false)
-      
+      const response = await axios.post(`${BASE_URL}/users/login`, userLogin)
+      localStorage.setItem('token', response.data.token)
+      setIsLogged(true)
+      setIsLoading(false)
+      goToFeed(navigate)
+
     } catch (error) {
       setIsLoading(false)
       console.log(error)
+
+      if(error.response.status===404){
+        window.alert("Email ou senha invalida")
+
+      }
     }
   }
 
@@ -66,30 +78,35 @@ const HomePage = () => {
         </div>
       </div>
       <div className="form-wrapper">
-        <form onSubmit={(e)=>handleSubmit(e)}>
-          <TextField 
-          type="text" 
-          id='input-form' 
-          label="E-mail" 
-          variant="outlined"  
-          onChange={(e)=>setEmail(e.target.value)} 
-          value={email}
-          required />
-          <TextField 
-          type="password" 
-          id='input-form' 
-          label="Senha" 
-          variant="outlined" 
-          onChange={(e)=>setPassword(e.target.value)}
-          value={password}
-          required />
-          <button className='btn'> Continuar</button>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <TextField
+            type="text"
+            id='input-form'
+            label="E-mail"
+            variant="outlined"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            required />
+          <TextField
+            type="password"
+            id='input-form'
+            label="Senha"
+            variant="outlined"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            required />
+          <button onClick={validation} className='btn'>
+            {isLoading ?
+              <CircularProgress color="inherit"/> :
+              <span>Continuar</span>
+            }
+          </button>
         </form>
         <div className='line'></div>
       </div>
-        <div className='signup-btn'>
-          <button className='btn btn-white'>Crie uma conta!</button>
-        </div>
+      <div className='signup-btn'>
+        <button onClick={()=>goToSignUp(navigate)} type='submit'  className='btn btn-white'>Crie uma conta!</button>
+      </div>
 
 
     </Layout>

@@ -3,10 +3,8 @@ import Layout from '../components/Layout'
 
 const PageNotFound = () => {
   return (
-    <Layout>
 
     <h1>PageNotFound</h1>
-    </Layout>
   )
 }
 

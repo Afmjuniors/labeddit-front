@@ -100,7 +100,10 @@ const Feed = () => {
         {isLoading?
         <>
         </>:
-        posts.map((post)=><Posts post={post} key={post.id} path={path}/>)
+        posts
+        .sort((a,b)=>b.comments-a.comments)
+        .sort((a,b)=>b.likes-a.likes)
+        .map((post)=><Posts post={post} key={post.id} path={path}/>)
         }
       </div>
     </Layout>

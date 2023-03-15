@@ -2,33 +2,26 @@ import { render, screen } from "@testing-library/react"
 import Header from "../components/Header"
 import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { GlobalContext } from "../context/GlobalContext"
+import HomePage from "../pages/HomePage"
+import axios from "axios"
 
-jest.mock("react-router-dom")
+
+const url = "http://urlMock-base.com"
+jest.mock(url)
 
 // Define a mock context object with the `isLogged` property
-const mockContext = {
-  isLogged: true,
-}
 
-// Create a mock context provider that returns the mock context object
-const MockContextProvider = ({ children }) => {
-  return (
-    <GlobalContext.Provider value={mockContext}>
-      {children}
-    </GlobalContext.Provider>
-  )
-}
 
-describe("Header", () => {
+describe("Homepage", () => {
   test("deve renderizar com o título", () => {
     useNavigate.mockReturnValue(jest.fn())
     useLocation.mockReturnValue("/")
     useParams.mockReturnValue({id:undefined})
 
+    axios.get(url).mockReturnValue()
+
     render(
-      <MockContextProvider>
-        <Header />
-      </MockContextProvider>
+        <HomePage />
     )
 
     screen.logTestingPlaygroundURL()

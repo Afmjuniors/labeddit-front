@@ -44,10 +44,14 @@ const NewPosts = () => {
 
   return (
     <div className='new-post'>
-        <textarea placeholder='Escreva seu post...' value={content} onChange={(e)=>setContent(e.target.value)} rows="6">
+        <textarea 
+        placeholder={path.includes("posts")?"Escreva seu post...":"Adicionar comentário"}
+         value={content} onChange={(e)=>setContent(e.target.value)} rows="6">
 
         </textarea>
-        <button onClick={handleClickPost} className='btn btn-new-post'> Postar</button>
+        <button onClick={handleClickPost} className='btn btn-new-post'> 
+        {path.includes("posts")?<span>Postar</span>:<span>Responder</span>}
+        </button>
        <div className='line'></div>
     </div>
   )

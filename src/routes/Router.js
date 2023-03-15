@@ -9,7 +9,7 @@ import Feed from '../pages/Feed'
 const Router = () => {
   return (
    <BrowserRouter>
-
+  
     <Routes>
         <Route path="*" element={<PageNotFound />}/>
         <Route path="/" element={<HomePage />}/>

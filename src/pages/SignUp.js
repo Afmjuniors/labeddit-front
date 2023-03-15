@@ -35,6 +35,7 @@ const SignUp = () => {
           setIsValid(true)
         }
       }
+      
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
@@ -91,7 +92,7 @@ const SignUp = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required />
-                    <p className='inside-text-form'>Ao continuar, você concorda com o nosso <a className='inner-link'>Contrato de usuário</a>  e nossa <a className='inner-link'>Política de Privacidade</a></p>
+                    <p className='inside-text-form top-text' >Ao continuar, você concorda com o nosso <a className='inner-link'>Contrato de usuário</a>  e nossa <a className='inner-link'>Política de Privacidade</a></p>
                     <div className='checkbox-group'>
                         <input type="checkbox" checked={isCheked} onChange={(e) => setIsCheked(e.target.checked)} />
                         <span className='inside-text-form'>Eu concordo em receber emails sobre coisas legais no Labeddit</span>

@@ -16,8 +16,6 @@ const Posts = ({ post,path }) => {
   const [numb, setNumb] = useState(likes)
 
   const navigate = useNavigate()
-  const params = useParams()
-console.log(path)
  
 
 
@@ -76,8 +74,7 @@ console.log(path)
           <span className='number-reaction'>{handleNumbers(numb)}</span>
             <img className="icon down" onClick={()=>handleReaction(0)} src={like && like[0] === 0 ?arrowRed:iconReactionDown} alt="Down icon" /> 
         </div>
-        }
-        
+        }        
         {path!=="/posts/"?<></>:
           <div className='reactions'>
             <img className="icon chat" src={chatBox} alt="comments icon" />

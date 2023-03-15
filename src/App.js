@@ -5,7 +5,7 @@ import "./styles.css"
 
 
 function App() {
-  const [isLogged,setIsLogged] = useState(false)
+  const [isLogged,setIsLogged] = useState(true)
 const context = {
   isLogged,
   setIsLogged

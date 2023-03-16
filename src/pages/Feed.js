@@ -1,3 +1,4 @@
+import { Skeleton } from '@mui/material'
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
@@ -98,8 +99,12 @@ const Feed = () => {
         }
         <NewPosts />
         {isLoading?
-        <>
-        </>:
+        <div className='skeleton-wrapper'>
+        <Skeleton variant="rounded" width={"100%"} height={100}/>
+        <Skeleton variant="rounded" animation="wave" width={"100%"} height={100}/>
+        <Skeleton variant="rounded" width={"100%"} height={100}/>
+        </div>
+        :
         posts
         .sort((a,b)=>b.comments-a.comments)
         .sort((a,b)=>b.likes-a.likes)

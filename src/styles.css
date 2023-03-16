@@ -16,7 +16,7 @@ body {
 
 .container {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     max-width: 800px;
     margin: auto;
     display: flex;
@@ -182,6 +182,7 @@ body {
     font-size: 1rem;
     color: #000;
     border-radius: 12px;
+    resize: none;
     
 }
 .new-post textarea::placeholder{
@@ -190,6 +191,16 @@ body {
 }
 .btn-new-post{
     margin: 2vh 0;
+}
+.skeleton-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+
 }
 .posts-wrapper{
 display: flex;
@@ -215,6 +226,7 @@ font-family: var(--font-alt);
     font-weight: 400;
     color: #000;
     font-size: 1rem;
+    overflow-wrap: break-word;
 }
 .reactions-wrapper{
     height: 1rem;
@@ -236,4 +248,9 @@ font-family: var(--font-alt);
     font-weight: 700;
     color:#6F6F6F;
 
+}
+.footer{
+    text-align: center;
+    margin-top: auto;
+    color:#6F6F6F;
 }

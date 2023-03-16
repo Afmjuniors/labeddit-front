@@ -74,7 +74,7 @@ const HomePage = () => {
         <img className="logo-full" src={logoFull} alt="LabEddit Logo" />
         <div className='subtitles'>
           <p>O projeto de rede social da Labenu</p>
-          <p>Feito por Alexandre Machado</p>
+          
         </div>
       </div>
       <div className="form-wrapper">
@@ -107,6 +107,7 @@ const HomePage = () => {
       <div className='signup-btn'>
         <button onClick={()=>goToSignUp(navigate)} type='submit'  className='btn btn-white'>Crie uma conta!</button>
       </div>
+      <p className='footer'>Feito por Alexandre Machado</p>
 
 
     </Layout>

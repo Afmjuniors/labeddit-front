@@ -22,6 +22,8 @@ const SignUp = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [isValid, setIsValid] = useState(false)
 
+    setIsLogged(false)
+
     const validation = () => {
         if (!email.match(regexEmail)) {
           window.alert('Deve ser um email valido')

@@ -28,6 +28,7 @@ const NewPosts = () => {
       const response = await axios.post(`${BASE_URL}${path}`,{content},{headers})
       console.log(response)
       setIsLoading(false)
+      window.location.reload()
     } catch (error) {
       setIsLoading(false)
       console.log(error)
@@ -38,13 +39,12 @@ const NewPosts = () => {
     console.log(content)
     createNewPost(headers)
     setContent('')
-    window.location.reload()
   }
 
 
   return (
     <div className='new-post'>
-        <textarea 
+        <textarea className='textarea-newpost'
         placeholder={path.includes("posts")?"Escreva seu post...":"Adicionar comentário"}
          value={content} onChange={(e)=>setContent(e.target.value)} rows="6">
 

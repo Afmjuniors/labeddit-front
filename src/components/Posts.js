@@ -51,7 +51,7 @@ const Posts = ({ post,path }) => {
   }
 
   const handleNumbers = (number) => {
-    if(number<=0){
+    if(number<0){
       return 0
     }
     if (number / 1000 > 1) {

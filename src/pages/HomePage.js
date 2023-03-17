@@ -61,7 +61,7 @@ const HomePage = () => {
       setIsLoading(false)
       console.log(error)
 
-      if(error.response.status===404){
+      if(error.response.status===404 || error.response.status===401){
         window.alert("Email ou senha invalida")
 
       }

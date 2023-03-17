@@ -30,8 +30,7 @@ const Header = () => {
             goToHomePage(navigate)
             localStorage.removeItem('token')
           }}>Logout</p>:        
-          <p onClick={()=>goToHomePage(navigate)}>Entrar</p>      
-
+          <p onClick={()=>goToHomePage(navigate)}>Entrar</p> 
         }
     </header>
     }

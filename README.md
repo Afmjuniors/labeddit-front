@@ -52,6 +52,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#deploy">Deploy</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#backend-repo">BackEnd Repo</a></li>    
     <li><a href="#roadmap">Roadmap</a></li>
@@ -111,7 +112,9 @@ Update your Node version
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Deploy
 
+To see the application online you can acess the [vercel](https://labeddit-front.vercel.app/) deploy. ('https://labeddit-front.vercel.app/')
 
 <!-- USAGE EXAMPLES -->
 ## Usage

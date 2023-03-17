@@ -154,6 +154,11 @@ body {
     display: flex;
     gap: 8px;
 }
+
+/* .fix-post{
+    position: sticky;
+    top:0
+} */
 .wrapper-feed{
     width: 90%;
     max-width: 1200px;
@@ -170,6 +175,9 @@ body {
     flex-direction: column;
     margin: 16px auto;
     align-items: center;
+    position: sticky;
+    top:0;
+    background-color: white;
     
 }
 .new-post textarea{

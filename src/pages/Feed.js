@@ -107,6 +107,7 @@ const Feed = () => {
         :
         posts
         .sort((a,b)=>b.comments-a.comments)
+        .sort((a,b)=>a.dislikes-b.dislikes)
         .sort((a,b)=>b.likes-a.likes)
         .map((post)=><Posts post={post} key={post.id} path={path}/>)
         }

@@ -53,7 +53,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#backedn">BackEnd Repo</a></li>    
+    <li><a href="#backend-repo">BackEnd Repo</a></li>    
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -65,9 +65,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://labeddit-front.vercel.app/)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `Afmjuniors`, `labeddit-front`, `twitter_handle`, `afmjuniors`, `gmail`, `afmjuniors`, `Labeddit`, `Social media based on Reddit`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,13 +119,15 @@ Update your Node version
 This application is a Fullstack development of a working social media plataform.
 Using a blog formata the user can view posts by others users, Like or Dislike them and even comment in a specific post.
 
-_For details of the endpoints, please refer to the [Labeddit-back documantation](https://example.com)_
+_For details of the endpoints, please refer to the [Labeddit-back documantation](https://documenter.getpostman.com/view/24460683/2s93JzJzSj)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## BackEnd Repo
-To see the repository of this application backend <br/>
+To see the [repository]('https://github.com/Afmjuniors/labeddit-back')
+ of this application backend <br/>
+ https://github.com/Afmjuniors/labeddit-back
 
 
 <!-- ROADMAP -->
@@ -163,8 +164,8 @@ Project Link: [https://github.com/Afmjuniors/projeto-react-apis](https://github.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* As may last project made by the bootcamp Labenu I would like to thanks them
-* Also as the last project by the bootcamp I would like to thanks my colegues form Ammal-A
+* As my last project made by the bootcamp Labenu I would like to thanks them, every single teacher was critical to my learning experience, and the support staff was wornderful.
+* Also as the last project by the bootcamp I would like to thanks my colegues form Ammal-A, they were a very unite commuty and I hope that we continue to do so.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -114,7 +114,7 @@ Update your Node version
 
 ## Deploy
 
-To see the application online you can acess the [vercel]('https://labeddit-front.vercel.app/') deploy. ('https://labeddit-front.vercel.app/')
+To see the application online you can acess the [vercel](https://labeddit-front.vercel.app/) deploy. ('https://labeddit-front.vercel.app/')
 
 <!-- USAGE EXAMPLES -->
 ## Usage
